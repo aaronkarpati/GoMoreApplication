@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4286D072220627B0009570EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286D071220627B0009570EB /* AppDelegate.swift */; };
 		4286D074220627B0009570EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286D073220627B0009570EB /* ViewController.swift */; };
-		4286D077220627B0009570EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4286D075220627B0009570EB /* Main.storyboard */; };
 		4286D079220627B3009570EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4286D078220627B3009570EB /* Assets.xcassets */; };
 		4286D07C220627B3009570EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4286D07A220627B3009570EB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		4286D06E220627B0009570EB /* GoMoreApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMoreApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4286D071220627B0009570EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4286D073220627B0009570EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4286D076220627B0009570EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4286D078220627B3009570EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4286D07B220627B3009570EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4286D07D220627B3009570EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			children = (
 				4286D071220627B0009570EB /* AppDelegate.swift */,
 				4286D073220627B0009570EB /* ViewController.swift */,
-				4286D075220627B0009570EB /* Main.storyboard */,
 				4286D078220627B3009570EB /* Assets.xcassets */,
 				4286D07A220627B3009570EB /* LaunchScreen.storyboard */,
 				4286D07D220627B3009570EB /* Info.plist */,
@@ -124,7 +121,6 @@
 			files = (
 				4286D07C220627B3009570EB /* LaunchScreen.storyboard in Resources */,
 				4286D079220627B3009570EB /* Assets.xcassets in Resources */,
-				4286D077220627B0009570EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,14 +139,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4286D075220627B0009570EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4286D076220627B0009570EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4286D07A220627B3009570EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +280,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaronkarpati.GoMoreApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaronkarpati.GoMoreApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
