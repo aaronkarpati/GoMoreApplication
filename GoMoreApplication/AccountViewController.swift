@@ -32,10 +32,13 @@ class AccountViewController: UIViewController {
         view.backgroundColor = Theme.color.goGrey()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
         self.navigationController?.navigationBar.barTintColor = Theme.color.goBlue()
+        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
+
 
         // Do any additional setup after loading the view.
+        tableView.contentInset = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
         view.addSubview(tableView)
         setupAutoLayout()
     }
@@ -60,6 +63,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 40
+        
     }
     
     /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -109,7 +113,15 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 70
+        switch(indexPath.section) {
+        case 0: return 60    // section 0 has 1 rows
+        case 1: return 50    // section 1 has 2 row
+        case 2: return 50    // section 2 has 1 rows
+        case 3: return 50    // section 3 has 2 row
+        case 4: return 50    // section 4 has 3 rows
+        case 5: return 50    // section 5 has 3 rows
+        default: fatalError("Unknown number of sections")
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,51 +131,63 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
         case 0:
             switch(indexPath.row) {
             case 0:
-                cell.titleText
+                cell.titleText.text = "Username"
                 return cell   // section 0, row 0 is the first name
             default: fatalError("Unknown row in section 0")
             }
         case 1:
             switch(indexPath.row) {
             case 0:
+                cell.titleText.text = "Points overview"
                 return cell       // section 1, row 0 is the share option
             case 1:
+                cell.titleText.text = "Earn free rentals"
                 return cell       // section 1, row 0 is the share option
             default: fatalError("Unknown row in section 1")
             }
         case 2:
             switch(indexPath.row) {
             case 0:
+                cell.titleText.text = "Ride alerts"
                 return cell       // section 1, row 0 is the share option
             default: fatalError("Unknown row in section 1")
             }
         case 3:
             switch(indexPath.row) {
             case 0:
+                cell.titleText.text = "My cars"
                 return cell       // section 1, row 0 is the share option
             case 1:
+                cell.titleText.text = "Favorite cars"
                 return cell       // section 1, row 0 is the share option
             default: fatalError("Unknown row in section 1")
             }
         case 4:
             switch(indexPath.row) {
             case 0:
+                cell.titleText.text = "Payment cards"
                 return cell       // section 1, row 0 is the share option
             case 1:
+                cell.titleText.text = "Balance"
                 return cell       // section 1, row 0 is the share option
             case 2:
+                cell.titleText.text = "Transfers"
                 return cell       // section 1, row 0 is the share option
             default: fatalError("Unknown row in section 1")
             }
         case 5:
             switch(indexPath.row) {
             case 0:
+                cell.titleText.text = "Support"
                 return cell       // section 1, row 0 is the share option
             case 1:
+                cell.titleText.text = "Contact us"
                 return cell       // section 1, row 0 is the share option
             case 2:
+                cell.titleText.text = "Recommend in App Store"
                 return cell       // section 1, row 0 is the share option
             case 3:
+                cell.titleText.text = "Log out"
                 return cell       // section 1, row 0 is the share option
             default: fatalError("Unknown row in section 1")
             }
@@ -221,7 +245,7 @@ class CustomTableCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.font = UIFont.systemFont(ofSize: 16.0)
         return label
     }()
     
