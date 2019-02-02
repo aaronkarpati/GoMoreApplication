@@ -11,15 +11,19 @@
 		4286D074220627B0009570EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286D073220627B0009570EB /* ViewController.swift */; };
 		4286D079220627B3009570EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4286D078220627B3009570EB /* Assets.xcassets */; };
 		4286D07C220627B3009570EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4286D07A220627B3009570EB /* LaunchScreen.storyboard */; };
+		7E8F984FA2682579E8899F05 /* Pods_GoMoreApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0513ABD41B47C73AB1B2C101 /* Pods_GoMoreApplication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0513ABD41B47C73AB1B2C101 /* Pods_GoMoreApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoMoreApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4286D06E220627B0009570EB /* GoMoreApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoMoreApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4286D071220627B0009570EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4286D073220627B0009570EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4286D078220627B3009570EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4286D07B220627B3009570EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4286D07D220627B3009570EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E02B2830731B3F94E727FEF7 /* Pods-GoMoreApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoMoreApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoMoreApplication/Pods-GoMoreApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		E8E97C797490CC544A1F1F98 /* Pods-GoMoreApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoMoreApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoMoreApplication/Pods-GoMoreApplication.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8F984FA2682579E8899F05 /* Pods_GoMoreApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +43,8 @@
 			children = (
 				4286D070220627B0009570EB /* GoMoreApplication */,
 				4286D06F220627B0009570EB /* Products */,
+				B9EF066B33323597E10A6E42 /* Pods */,
+				A324C96C3B6F7D5F61029D90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +68,23 @@
 			path = GoMoreApplication;
 			sourceTree = "<group>";
 		};
+		A324C96C3B6F7D5F61029D90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0513ABD41B47C73AB1B2C101 /* Pods_GoMoreApplication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9EF066B33323597E10A6E42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E02B2830731B3F94E727FEF7 /* Pods-GoMoreApplication.debug.xcconfig */,
+				E8E97C797490CC544A1F1F98 /* Pods-GoMoreApplication.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4286D080220627B3009570EB /* Build configuration list for PBXNativeTarget "GoMoreApplication" */;
 			buildPhases = (
+				CF646F9990F469D0B012B8D4 /* [CP] Check Pods Manifest.lock */,
 				4286D06A220627B0009570EB /* Sources */,
 				4286D06B220627B0009570EB /* Frameworks */,
 				4286D06C220627B0009570EB /* Resources */,
+				1B1365FF8A7085A56BCE7D69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +151,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B1365FF8A7085A56BCE7D69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoMoreApplication/Pods-GoMoreApplication-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoMoreApplication/Pods-GoMoreApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF646F9990F469D0B012B8D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoMoreApplication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4286D06A220627B0009570EB /* Sources */ = {
@@ -268,15 +333,13 @@
 		};
 		4286D081220627B3009570EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E02B2830731B3F94E727FEF7 /* Pods-GoMoreApplication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HDXM98U4Z;
 				INFOPLIST_FILE = GoMoreApplication/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaronkarpati.GoMoreApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -286,15 +349,13 @@
 		};
 		4286D082220627B3009570EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E97C797490CC544A1F1F98 /* Pods-GoMoreApplication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3HDXM98U4Z;
 				INFOPLIST_FILE = GoMoreApplication/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aaronkarpati.GoMoreApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
