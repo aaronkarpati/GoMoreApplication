@@ -62,7 +62,7 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
         return 40
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! CustomTableViewHeader
         switch(section) {
@@ -74,10 +74,22 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
         case 5: return header
         default: fatalError("Unknown number of sections")
         }
-    }
+    }*/
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch(section) {
+        case 0: return nil
+        case 1: return "GoMore Points"
+        case 2: return "Ridesharing"
+        case 3: return "Rental"
+        case 4: return "Payment"
+        case 5: return "Other"
+        default: fatalError("Unknown section")
+        }
     }
     
     //
@@ -97,13 +109,67 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        return 70
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomTableCell
-        return cell
+        switch(indexPath.section) {
+        case 0:
+            switch(indexPath.row) {
+            case 0:
+                cell.titleText
+                return cell   // section 0, row 0 is the first name
+            default: fatalError("Unknown row in section 0")
+            }
+        case 1:
+            switch(indexPath.row) {
+            case 0:
+                return cell       // section 1, row 0 is the share option
+            case 1:
+                return cell       // section 1, row 0 is the share option
+            default: fatalError("Unknown row in section 1")
+            }
+        case 2:
+            switch(indexPath.row) {
+            case 0:
+                return cell       // section 1, row 0 is the share option
+            default: fatalError("Unknown row in section 1")
+            }
+        case 3:
+            switch(indexPath.row) {
+            case 0:
+                return cell       // section 1, row 0 is the share option
+            case 1:
+                return cell       // section 1, row 0 is the share option
+            default: fatalError("Unknown row in section 1")
+            }
+        case 4:
+            switch(indexPath.row) {
+            case 0:
+                return cell       // section 1, row 0 is the share option
+            case 1:
+                return cell       // section 1, row 0 is the share option
+            case 2:
+                return cell       // section 1, row 0 is the share option
+            default: fatalError("Unknown row in section 1")
+            }
+        case 5:
+            switch(indexPath.row) {
+            case 0:
+                return cell       // section 1, row 0 is the share option
+            case 1:
+                return cell       // section 1, row 0 is the share option
+            case 2:
+                return cell       // section 1, row 0 is the share option
+            case 3:
+                return cell       // section 1, row 0 is the share option
+            default: fatalError("Unknown row in section 1")
+            }
+        default: fatalError("Unknown section")
+        }
+        cell.leftImageView.image =  UIImage(named: "user")
     }
 
     
@@ -135,6 +201,47 @@ class CustomTableCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .white
+        self.accessoryType = .disclosureIndicator
+        setupView()
+    }
+    
+    let leftImageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 50
+        image.backgroundColor = UIColor.gray
+        return image
+    }()
+    
+    
+    let titleText: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        return label
+    }()
+    
+    func  setupView(){
+        addSubview(leftImageView)
+        addSubview(titleText)
+
+        
+        leftImageView.snp.remakeConstraints { (make) in
+            make.left.equalTo(self.snp.left).offset(15)
+            make.centerY.equalTo(self.snp.centerY)
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+        }
+        
+        titleText.snp.remakeConstraints { (make) in
+            make.left.equalTo(leftImageView.snp.right).offset(20)
+            make.centerY.equalTo(self.snp.centerY)
+
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
