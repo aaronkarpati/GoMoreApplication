@@ -64,6 +64,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CustomeCell
         cell.backgroundColor  = .white
         cell.layer.cornerRadius = 5
+        cell.layer.masksToBounds = true
         //cell.layer.shadowOpacity = 3
         cell.imageView.image = UIImage(named: "user")
         return cell
@@ -106,11 +107,13 @@ class CustomeCell: UICollectionViewCell {
         label.textAlignment = .left
         label.textColor = .black
         label.text = "What's your phone number?"
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
         return label
     }()
     
     let midLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .black
@@ -122,15 +125,37 @@ class CustomeCell: UICollectionViewCell {
         return label
     }()
     
+    let dismissButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.setTitle("Dismiss", for: .normal)
+        button.setTitleColor(Theme.color.goOrange(), for: .normal)
+        button.clipsToBounds = true
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
+        return button
+    }()
+    
+    let extraButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.setTitle("Add your number", for: .normal)
+        button.setTitleColor(Theme.color.goOrange(), for: .normal)
+        button.clipsToBounds = true
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
+        return button
+    }()
+    
     
     func  setupView(){
         addSubview(imageView)
         addSubview(textLabel)
         addSubview(midLabel)
+        addSubview(dismissButton)
+        addSubview(extraButton)
         
         imageView.snp.remakeConstraints { (make) in
-            make.right.equalTo(self.snp.right).inset(20)
-            make.top.equalTo(self.snp.top).inset(20)
+            make.right.equalTo(self.snp.right).inset(15)
+            make.top.equalTo(self.snp.top).inset(15)
             make.width.equalTo(50)
             make.height.equalTo(50)
         }
@@ -138,14 +163,29 @@ class CustomeCell: UICollectionViewCell {
         textLabel.snp.remakeConstraints { (make) in
             make.right.equalTo(imageView.snp.right).inset(40)
             make.top.equalTo(imageView.snp.top)
-            make.left.equalTo(self.snp.left)
+            make.left.equalTo(self.snp.left).inset(10)
         }
         
         midLabel.snp.remakeConstraints { (make) in
-            make.top.equalTo(textLabel.snp.bottom).offset(10)
-            make.left.equalTo(self.snp.left)
-            make.height.equalTo(100)
+            make.top.equalTo(textLabel.snp.bottom).offset(5)
+            make.left.equalTo(self.snp.left).inset(10)
+            //make.height.equalTo(100)
             make.right.equalTo(imageView.snp.right).inset(40)
+        }
+        
+        dismissButton.snp.remakeConstraints { (make) in
+            make.left.equalTo(self.snp.left)
+            make.bottom.equalTo(self.snp.bottom)
+            make.width.equalTo(self.snp.width).dividedBy(2)
+            make.height.equalTo(40)
+            
+        }
+        
+        extraButton.snp.remakeConstraints { (make) in
+            make.right.equalTo(self.snp.right)
+            make.bottom.equalTo(self.snp.bottom)
+            make.width.equalTo(self.snp.width).dividedBy(2)
+            make.height.equalTo(40)
         }
     }
     
