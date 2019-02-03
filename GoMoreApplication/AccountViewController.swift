@@ -113,12 +113,12 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(section) {
-        case 0: return 1    // section 0 has 1 rows
-        case 1: return 2    // section 1 has 2 row
-        case 2: return 1    // section 2 has 1 rows
-        case 3: return 2    // section 3 has 2 row
-        case 4: return 3    // section 4 has 3 rows
-        case 5: return 4    // section 5 has 3 rows
+        case 0: return 1
+        case 1: return 2
+        case 2: return 1
+        case 3: return 2
+        case 4: return 3
+        case 5: return 4
         default: fatalError("Unknown number of sections")
         }
     }
@@ -126,13 +126,13 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch(indexPath.section) {
-        case 0: return 60    // section 0 has 1 rows
-        case 1: return 50    // section 1 has 2 row
-        case 2: return 50    // section 2 has 1 rows
-        case 3: return 50    // section 3 has 2 row
-        case 4: return 50    // section 4 has 3 rows
-        case 5: return 50    // section 5 has 3 rows
-        default: fatalError("Unknown number of sections")
+        case 0: return 60
+        case 1: return 50
+        case 2: return 50
+        case 3: return 50
+        case 4: return 50
+        case 5: return 50
+        default: fatalError("Unknown height of sections")
         }
     }
     
@@ -144,63 +144,63 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
             switch(indexPath.row) {
             case 0:
                 cell.titleText.text = "Username"
-                return cell   // section 0, row 0 is the first name
+                return cell
             default: fatalError("Unknown row in section 0")
             }
         case 1:
             switch(indexPath.row) {
             case 0:
                 cell.titleText.text = "Points overview"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 1:
                 cell.titleText.text = "Earn free rentals"
-                return cell       // section 1, row 0 is the share option
+                return cell
             default: fatalError("Unknown row in section 1")
             }
         case 2:
             switch(indexPath.row) {
             case 0:
                 cell.titleText.text = "Ride alerts"
-                return cell       // section 1, row 0 is the share option
+                return cell
             default: fatalError("Unknown row in section 1")
             }
         case 3:
             switch(indexPath.row) {
             case 0:
                 cell.titleText.text = "My cars"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 1:
                 cell.titleText.text = "Favorite cars"
-                return cell       // section 1, row 0 is the share option
+                return cell
             default: fatalError("Unknown row in section 1")
             }
         case 4:
             switch(indexPath.row) {
             case 0:
                 cell.titleText.text = "Payment cards"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 1:
                 cell.titleText.text = "Balance"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 2:
                 cell.titleText.text = "Transfers"
-                return cell       // section 1, row 0 is the share option
+                return cell
             default: fatalError("Unknown row in section 1")
             }
         case 5:
             switch(indexPath.row) {
             case 0:
                 cell.titleText.text = "Support"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 1:
                 cell.titleText.text = "Contact us"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 2:
                 cell.titleText.text = "Recommend in App Store"
-                return cell       // section 1, row 0 is the share option
+                return cell
             case 3:
                 cell.titleText.text = "Log out"
-                return cell       // section 1, row 0 is the share option
+                return cell
             default: fatalError("Unknown row in section 1")
             }
         default: fatalError("Unknown section")
