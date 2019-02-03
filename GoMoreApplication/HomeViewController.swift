@@ -39,6 +39,7 @@ class HomeViewController: UIViewController{
         collectionView.register(CustomeCell.self, forCellWithReuseIdentifier: cellId)
         view.addSubview(collectionView)
         setupCollection()
+        rightBarButton()
         
     }
     
@@ -49,6 +50,16 @@ class HomeViewController: UIViewController{
             make.width.equalTo(view.frame.width)
             make.top.equalTo(view.safeAreaInsets.top)
         }
+    }
+    
+    func rightBarButton(){
+        let icon = UIBarButtonItem(title: "Create ride", style: .plain, target: self, action: #selector(tapped))
+        icon.tintColor = .white
+        self.navigationItem.rightBarButtonItem = icon
+    }
+    
+    @objc func tapped(){
+        print("tapped")
     }
 
 

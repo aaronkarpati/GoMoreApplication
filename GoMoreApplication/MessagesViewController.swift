@@ -24,7 +24,7 @@ class MessagesViewController: UIViewController,CustomSegmentedControlDelegate {
 
         // Do any additional setup after loading the view.
         createSegment()
-        leftBarButton()
+        rightBarButton()
     }
     
     func changeToIndex(index: Int) {
@@ -40,7 +40,7 @@ class MessagesViewController: UIViewController,CustomSegmentedControlDelegate {
         }
     }
     
-    func leftBarButton(){
+    func rightBarButton(){
         let icon = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(MessagesViewController.iconClick))
         icon.tintColor = .white
         self.navigationItem.rightBarButtonItem = icon

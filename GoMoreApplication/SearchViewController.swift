@@ -11,6 +11,9 @@ import SnapKit
 
 class SearchViewController: UIViewController {
 
+    var searchRides = UIView() //SearchRides(frame: view.bounds)
+    var searchRentals = UIView() //SearchRentals(frame: view.bounds)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +35,12 @@ class SearchViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 1
         self.navigationController?.navigationBar.addSubview(segmentedControl)
         
+        searchRides = SearchRides(frame: view.bounds)
+        searchRentals = SearchRentals(frame: view.bounds)
+        self.view.addSubview(searchRides)
+        self.view.addSubview(searchRentals)
+        
+        
         segmentedControl.snp.remakeConstraints { (make) in
             make.centerX.equalTo((self.navigationController?.navigationBar.snp.centerX)!)
             make.centerY.equalTo((self.navigationController?.navigationBar.snp.centerY)!)
@@ -41,14 +50,13 @@ class SearchViewController: UIViewController {
     }
     
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
-        let searchRides = SearchRides(frame: view.bounds)
         switch (segmentedControl.selectedSegmentIndex) {
         case 0:
-            self.view.addSubview(searchRides)
-        break // Uno
+            UIView.transition(from: searchRentals, to: searchRides, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+        break
         case 1:
-            
-        break // Dos
+           UIView.transition(from: searchRides, to: searchRentals, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+        break
         default:
             break
         }

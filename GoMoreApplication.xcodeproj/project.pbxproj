@@ -18,6 +18,7 @@
 		4286D08C22062AEF009570EB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286D08B22062AEF009570EB /* Theme.swift */; };
 		4286D08E220631C5009570EB /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286D08D220631C5009570EB /* CustomSegmentedControl.swift */; };
 		4286D09222066858009570EB /* SearchRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286D09122066858009570EB /* SearchRides.swift */; };
+		42EB0D55220725B1001C690F /* SearchRentals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB0D54220725B1001C690F /* SearchRentals.swift */; };
 		7E8F984FA2682579E8899F05 /* Pods_GoMoreApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0513ABD41B47C73AB1B2C101 /* Pods_GoMoreApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		4286D08B22062AEF009570EB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4286D08D220631C5009570EB /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		4286D09122066858009570EB /* SearchRides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRides.swift; sourceTree = "<group>"; };
+		42EB0D54220725B1001C690F /* SearchRentals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRentals.swift; sourceTree = "<group>"; };
 		E02B2830731B3F94E727FEF7 /* Pods-GoMoreApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoMoreApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoMoreApplication/Pods-GoMoreApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		E8E97C797490CC544A1F1F98 /* Pods-GoMoreApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoMoreApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoMoreApplication/Pods-GoMoreApplication.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 				4286D073220627B0009570EB /* HomeViewController.swift */,
 				4286D083220628C3009570EB /* SearchViewController.swift */,
 				4286D09122066858009570EB /* SearchRides.swift */,
+				42EB0D54220725B1001C690F /* SearchRentals.swift */,
 				4286D087220628D9009570EB /* AccountViewController.swift */,
 				4286D085220628CE009570EB /* MessagesViewController.swift */,
 				4286D08D220631C5009570EB /* CustomSegmentedControl.swift */,
@@ -226,6 +229,7 @@
 				4286D072220627B0009570EB /* AppDelegate.swift in Sources */,
 				4286D08C22062AEF009570EB /* Theme.swift in Sources */,
 				4286D08E220631C5009570EB /* CustomSegmentedControl.swift in Sources */,
+				42EB0D55220725B1001C690F /* SearchRentals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
