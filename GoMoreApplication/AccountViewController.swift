@@ -35,12 +35,24 @@ class AccountViewController: UIViewController {
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
         self.navigationController?.navigationBar.barTintColor = Theme.color.goBlue()
         navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white]
+        
 
 
         // Do any additional setup after loading the view.
         tableView.contentInset = UIEdgeInsets(top: -35, left: 0, bottom: 0, right: 0)
         view.addSubview(tableView)
         setupAutoLayout()
+        leftBarButton()
+    }
+    
+    func leftBarButton(){
+        let icon = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(MessagesViewController.iconClick))
+        icon.tintColor = .white
+        self.navigationItem.rightBarButtonItem = icon
+    }
+    
+    @objc func iconClick(){
+        print("click")
     }
     
     func setupAutoLayout() {

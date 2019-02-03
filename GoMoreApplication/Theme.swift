@@ -31,4 +31,33 @@ class Theme {
         
     }
     
+    class View{
+        
+        class func doubleButtonView() -> UIView{
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            view.layer.backgroundColor = UIColor.white.cgColor
+            view.layer.cornerRadius = 6
+            view.clipsToBounds = true
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }
+        
+    }
+    
+    class Buttons {
+        
+        class func roundedButton(title: String, radius: CGFloat, textColor: UIColor, bgColor: UIColor) -> UIButton{
+            let button = UIButton(type: .system)
+            button.setTitle(title, for: .normal)
+            button.layer.cornerRadius = radius
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            button.setTitleColor(textColor, for: .normal)
+            button.backgroundColor = bgColor
+            button.clipsToBounds = true
+            return button
+        }
+        
+    }
+    
 }

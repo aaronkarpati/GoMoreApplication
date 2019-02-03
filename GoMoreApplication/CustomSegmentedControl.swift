@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 protocol CustomSegmentedControlDelegate:class {
     func changeToIndex(index:Int)
 }
@@ -81,11 +82,12 @@ extension CustomSegmentedControl {
         stack.alignment = .fill
         stack.distribution = .fillEqually
         addSubview(stack)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stack.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stack.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        stack.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        stack.snp.remakeConstraints { (make) in
+            make.top.equalTo(self.snp.top)
+            make.bottom.equalTo(self.snp.bottom)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+        }
     }
     
     private func configSelectorView() {
